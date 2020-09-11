@@ -12,9 +12,9 @@ menu = [
 for meal in menu:
     if "spam" not in meal:
         print(meal)
-
-        for item in meal:
-            print(item)
     else:
-        print("{0} has a spam score of {1}"
-              .format(meal, meal.count("spam")))
+        top_index = len(meal) - 1
+        for index, item in enumerate(reversed(meal)):
+            if item == "spam":
+                del meal[top_index - index]
+        print(meal)
