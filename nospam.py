@@ -11,10 +11,10 @@ menu = [
 
 for meal in menu:
     if "spam" not in meal:
-        print(meal)
+        print(", ".join(meal))
     else:
         top_index = len(meal) - 1
         for index, item in enumerate(reversed(meal)):
             if item == "spam":
                 del meal[top_index - index]
-        print(meal)
+        print(", ".join(meal))
